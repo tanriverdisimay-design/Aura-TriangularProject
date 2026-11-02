@@ -269,11 +269,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 .panel{max-width:var(--max);margin:0 auto;padding:clamp(96px,18vw,170px) var(--pad) 0;display:grid;gap:36px;align-items:center}
 .statement{font-size:clamp(29px,7.6vw,56px);line-height:1.08;letter-spacing:-.025em;font-weight:500;text-wrap:balance}
 .quiet{color:var(--mute);font-size:17px;margin-top:16px;max-width:24em}
-.panel--parts img{height:min(78svh,760px);width:auto;margin:0 auto}
-.partlist{list-style:none;margin-top:22px;color:var(--mute);display:grid;gap:10px}
-.partlist li{display:flex;align-items:center;gap:12px}
-.partlist li::before{content:"";width:22px;height:2px;background:var(--pc)}
-.partlist li:nth-child(1){--pc:#8DBF3A}.partlist li:nth-child(2){--pc:#4FA8D6}.partlist li:nth-child(3){--pc:#D9A91C}.partlist li:nth-child(4){--pc:#D2692C}.partlist li:nth-child(5){--pc:#8F7BC8}
+/* exploded view: names sit in one column right of the render, each tied to its part by a leader in the part's colour */
+.panel--parts{--ph:min(72svh,720px);--pw:calc(var(--ph) * 700 / 2142)}
+.partsfig{position:relative;height:var(--ph);margin:0}
+.partsfig img{height:100%;width:auto;margin:0}
+.partlabels{list-style:none;position:absolute;inset:0;color:var(--ink)}
+.partlabels li{position:absolute;top:var(--y);left:calc(var(--pw) * var(--x));right:0;transform:translateY(-50%);
+  display:grid;grid-template-columns:calc(var(--pw) * (1 - var(--x)) + 16px) 1fr;gap:10px;align-items:center}
+.partlabels li::before{content:"";height:1.5px;background:var(--pc)}
 /* the render is cropped at the fingertip's right edge, so it sits flush with the viewport's right edge and bleeds off the left */
 .panel--touch{padding-left:0;padding-right:0;overflow:hidden}
 .touch{width:112vw;max-width:none;margin-left:-12vw;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
