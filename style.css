@@ -385,3 +385,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 .linked-photo{margin-top:40px}
 .linked-photo img{width:100%;aspect-ratio:1;object-fit:cover}
 .linked-photo figcaption{margin-top:12px}
+
+/* designer names link to their LinkedIn profiles */
+.person{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;text-decoration-thickness:1px;transition:text-decoration-color .3s}
+.person:hover,.person:focus-visible{text-decoration-color:var(--ink)}
